@@ -1,46 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 /**
- * main - Program entry point
+ * main - Entry point
  *
- * Return: 0 on success. Error code otherwise
- */
+ * Return: Always 0
+*/
+
 int main(void)
 {
-	int i, j, k, l;
+	int p, q;
 
-	i = 0;
-	while (i <= 9)
+	for (p = 0; p <= 98; p++)
 	{
-		j = 0;
-		while (j <= 9)
+		for (q = p + 1; q <= 99; q++)
 		{
-			k = 0;
-			while (k <= 9)
-			{
-				l = 0;
-				while (l <= 9)
-				{
-					if (k != 0 && l != 0)
-					{
-						putchar(i + '0');
-						putchar(j + '0');
-						putchar(' ');
-						putchar(k + '0');
-						putchar(l + '0');
-					}
-					if (1 == 1)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					l++;
-				}
-				k++;
-			}
-			j++;
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+
+			if (p == 98 && q == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
-		i++;
 	}
+
 	putchar('\n');
+
 	return (0);
 }
